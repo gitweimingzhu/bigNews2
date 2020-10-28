@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.layui-footer {
+  text-align: center;
+}
+.avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #009688;
+  border-radius: 50%;
+  /* 进行微小移动 */
+  position: relative;
+  top: 4px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+}
+.userInfo img {
+  display: none;
+}
+.layui-bg-black .userInfo {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: 1px solid #000;
+}
+.welcome {
+  color: #fff;
+  font-size: 12px;
+}
+.layui-icon-app {
+  margin-left: 10px;
+}
+.iconfont,
+.layui-icon-app {
+  padding-right: 10px;
+}
+.layui-body {
+  overflow: hidden;
+}
