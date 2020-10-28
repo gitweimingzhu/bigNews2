@@ -64,6 +64,8 @@ $(function () {
         var layer = layui.layer
         layer.msg(info.message)
         if (info.status === 0) {
+          // 将token进行设置本地存储
+          localStorage.setItem('token',info.token)  
           location.href = '../../index.html'
         }
       }
