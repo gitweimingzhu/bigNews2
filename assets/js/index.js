@@ -15,7 +15,7 @@ $(function  ( ) {
           $('.avatar').show().text(info.data.username.slice(0,1).toUpperCase()).next().hide()
         }
       }
-    }
+    },
   })
 
   // 点击按钮实现退出功能

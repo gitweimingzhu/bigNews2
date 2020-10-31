@@ -7,5 +7,12 @@ $.ajaxPrefilter(function  (options) {
     // 获取token的本地存储
     options.headers = {Authorization:localStorage.getItem('token')}
   }
-  
+  // 根据是否有token，能否在登陆的时候获取头像和用户名，设置防翻墙
+  options.complete = function  (res) {
+    console.log(res);
+    if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+      location.href = '../../login.html'
+    }
+  }
+
 })
