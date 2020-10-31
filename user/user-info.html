@@ -11,13 +11,13 @@
     <div class="layui-card">
       <div class="layui-card-header">修改用户信息</div>
       <div class="layui-card-body">
-        <form class="layui-form myForm" action="">
+        <form class="layui-form myForm" lay-filter="formTest" action="">
           <div class="layui-form-item">
             <label class="layui-form-label">登录名称</label>
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
+                name="username"
                 required
                 lay-verify="required"
                 placeholder="请输入登录名称"
@@ -31,7 +31,7 @@
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
+                name="nickname"
                 required
                 lay-verify="required"
                 placeholder="请输入用户昵称"
@@ -45,7 +45,7 @@
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
+                name="email"
                 required
                 lay-verify="required"
                 placeholder="请输入用户邮箱"
