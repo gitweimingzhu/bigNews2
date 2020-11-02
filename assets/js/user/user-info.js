@@ -1,12 +1,12 @@
 $(function () {
   //获取用户的基本信息渲染表单
+  var form = layui.form
   getUser()
   function getUser ( ) {
     $.ajax({
       url: '/my/userinfo',
       success: function (info) {
         if (info.status === 0) {
-          var form = layui.form
           form.val('formTest', info.data)
         }
       },
@@ -14,7 +14,6 @@ $(function () {
   }
 
   // 表单校验
-  var form = layui.form
   form.verify({
     username: function (value, item) {
       //value：表单的值、item：表单的DOM对象
@@ -31,6 +30,7 @@ $(function () {
   })
 
   // 给按钮注册事件进行用户信息修改
+  // 注册submit事件或者click事件都可
   $('.myForm').on('click', '.submit', function (e) {
     e.preventDefault()
     $.ajax({
