@@ -12,6 +12,7 @@
       <div class="layui-card-header">修改用户信息</div>
       <div class="layui-card-body">
         <form class="layui-form myForm" lay-filter="formTest" action="">
+          <input type="hidden" name="id">
           <div class="layui-form-item">
             <label class="layui-form-label">登录名称</label>
             <div class="layui-input-block">
@@ -33,7 +34,7 @@
                 type="text"
                 name="nickname"
                 required
-                lay-verify="required"
+                lay-verify="required|username"
                 placeholder="请输入用户昵称"
                 autocomplete="off"
                 class="layui-input"
@@ -47,7 +48,7 @@
                 type="text"
                 name="email"
                 required
-                lay-verify="required"
+                lay-verify="required|email"
                 placeholder="请输入用户邮箱"
                 autocomplete="off"
                 class="layui-input"
@@ -56,10 +57,10 @@
           </div>
           <div class="layui-form-item">
             <div class="layui-input-block">
-              <button class="layui-btn" lay-submit lay-filter="formDemo">
+              <button class="layui-btn submit" lay-submit lay-filter="formDemo">
                 提交修改
               </button>
-              <button type="reset" class="layui-btn layui-btn-primary">
+              <button class="layui-btn reset layui-btn-primary">
                 重置
               </button>
             </div>
