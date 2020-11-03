@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
-  <link rel="stylesheet" href="../assets/lib/cropper/cropper.css">
-  <link rel="stylesheet" href="../assets/css/user/user-avatar.css">
-</head>
-<body>
-  <div class="layui-card">
-    <div class="layui-card-header">更换头像</div>
-    <div class="layui-card-body">
-     <div class="box">
-       <div class="cropper">
-         <img src="../assets/images/sample.jpg" alt="">
-       </div>
-       <div class="preview">
-         <div class="prev">
-          <div class="w100"></div>
-          <p>100 x 100</p>
-         </div>
-         <div class="prev">
-          <div class="w50"></div>
-          <p>50 x 50</p>
-         </div>
-       </div>
-     </div>
-     <div class="button">
-      <button type="button" class="layui-btn">上传</button>
-      <button type="button" class="layui-btn layui-btn-danger">确定</button>
-     </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../assets/lib/cropper/cropper.css" />
+    <link rel="stylesheet" href="../assets/css/user/user-avatar.css" />
+  </head>
+  <body>
+    <div class="layui-card">
+      <div class="layui-card-header">更换头像</div>
+      <div class="layui-card-body">
+        <div class="box">
+          <div class="cropper">
+            <img id="image" src="../assets/images/sample.jpg" alt="" />
+          </div>
+          <div class="preview">
+            <div class="prev">
+              <div class="img-preview w100"></div>
+              <p>100 x 100</p>
+            </div>
+            <div class="prev">
+              <div class="img-preview w50"></div>
+              <p>50 x 50</p>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="file" id="avatar" style="display: none;">
+          <button type="button" class="layui-btn btn-upload">上传</button>
+          <button type="button" class="layui-btn layui-btn-danger btn-sure">确定</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <script src="../assets/lib/layui/layui.all.js"></script>
     <script src="../assets/lib/jquery.js"></script>
-    <script src="../assets/lib/cropper/jquery-cropper.js"></script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 注意引入顺序 -->
     <script src="../assets/lib/cropper/Cropper.js"></script>
+    <script src="../assets/lib/cropper/jquery-cropper.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/user/user-avatar.js"></script>
-</body>
+  </body>
 </html>

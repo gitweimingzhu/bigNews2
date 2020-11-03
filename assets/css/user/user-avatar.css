@@ -25,6 +25,7 @@
   height: 100px;
   background-color: grey;
   border-radius: 50%;
+  overflow: hidden;
 }
 .w50 {
   width: 50px;
@@ -32,6 +33,7 @@
   background-color: grey;
   border-radius: 50%;
   margin-top: 50px;
+  overflow: hidden;
 }
 p {
   color: grey;
