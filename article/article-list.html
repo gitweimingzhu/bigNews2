@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  文章列表
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../assets/css/article/article-list.css" />
+  </head>
+  <body>
+    <div class="layui-card">
+      <div class="layui-card-header">文章列表</div>
+      <div class="layui-card-body">
+        <form class="layui-form myForm" action="">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <select name="cate_id" id="category">
+                <!-- <option value="">所有分类</option>
+                <option value="0">北京</option> -->
+              </select>
+            </div>
+            <div class="layui-input-inline">
+              <select name="state" id="state">
+                <option value="">所有状态</option>
+                <!-- 修改value属性值 -->
+                <option value="已发布">已发布</option>
+                <option value="草稿">草稿</option>
+              </select>
+            </div>
+            <div class="layui-input-inline">
+              <button class="layui-btn" lay-filter="formDemo">筛选</button>
+            </div>
+          </div>
+        </form>
+        <table class="layui-table">
+          <colgroup>
+            <col />
+            <col width="200" />
+            <col width="200" />
+            <col width="200" />
+            <col width="200" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>文章标题</th>
+              <th>分类</th>
+              <th>发表时间</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>格林童话</td>
+              <td>儿童</td>
+              <td>2020-11-01 11:15:24</td>
+              <td>已发布</td>
+              <td>
+                <button type="button" class="layui-btn layui-btn-xs">
+                  编辑
+                </button>
+                <button
+                  type="button"
+                  class="layui-btn layui-btn-xs layui-btn-danger"
+                >
+                  删除
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+        <div id="test1"></div>
+      </div>
+    </div>
+    <script type="text/html" id="categoryList">
+      <option value="">所有分类</option>
+      {{each data value index}}
+      <option value="{{value.Id}}">{{value.name}}</option>
+      {{/each}}
+    </script>
+    <script type="text/html" id="articleList">
+      {{each data value index}}
+      <tr>
+        <td>{{value.title}}</td>
+        <td>{{value.cate_name}}</td>
+        <td>{{value.pub_date}}</td>
+        <td>{{value.state}}</td>
+        <td>
+          <a href="../article/article-detail.html" class="layui-btn layui-btn-xs btn-edit" data-id="{{value.Id}}">编辑</a>
+          <button type="button" class="layui-btn layui-btn-xs layui-btn-danger btn-del" data-id="{{value.Id}}">
+            删除
+          </button>
+        </td>
+      </tr>
+      {{/each}}
+    </script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/lib/template-web.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/article/article-list.js"></script>
+  </body>
 </html>

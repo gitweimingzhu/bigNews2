@@ -46,7 +46,7 @@ $(function () {
 
   // 3.根据 Id 删除文章分类
   $('tbody').on('click', '.btn-del', function () {
-    // 3.1 先获取删除分类的id，再弹出模态框
+    // 3.1 先获取删除分类的id，再弹出模态框（弹出模态框后是获取不到id的）
     var categoryListId = $(this).attr('data-id')
     layer.confirm('确定删除?', { icon: 3, title: '提示' }, function (index) {
       //do something
