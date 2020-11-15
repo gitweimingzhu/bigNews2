@@ -86,7 +86,8 @@
         <td>{{value.pub_date}}</td>
         <td>{{value.state}}</td>
         <td>
-          <a href="../article/article-detail.html" class="layui-btn layui-btn-xs btn-edit" data-id="{{value.Id}}">编辑</a>
+          <!-- 方法二：将编辑按钮改为超链接，id拼接到href属性值后面 -->
+          <a href="../article/article-detail.html?id={{value.Id}}" class="layui-btn layui-btn-xs btn-edit" data-id="{{value.Id}}">编辑</a>
           <button type="button" class="layui-btn layui-btn-xs layui-btn-danger btn-del" data-id="{{value.Id}}">
             删除
           </button>

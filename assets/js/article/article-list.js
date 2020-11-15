@@ -22,7 +22,7 @@ $(function () {
     state: $('#state').val(),
   }
 
-  // 2.1 列表页中的列表数据渲染
+  // 2.1 获取文章的列表数据
   renderList()
   //2.2 封装渲染文章列表的数据
   function renderList() {
@@ -98,10 +98,12 @@ $(function () {
     })
   })
 
-  // 4 根据 Id 获取文章详情
+  // 4 根据 Id 获取文章详情 
+  // 方法一：给编辑按钮注册click委托事件
   /* $('tbody').on('click', '.btn-edit', function () {
     // 获取文章id
     let id = this.getAttribute('data-id')
-    location.href = '../../../article/article-detail.html?/id=' + id
+    // 将id拼接到url地址后面
+    location.href = '../../../article/article-detail.html?id=' + id
   }) */
 })

@@ -45,8 +45,9 @@ $(function () {
       .cropper(options) // 重新初始化裁剪区域
   })
 
-  // 6. 实现文章的添加
-  // 6.1 给form表单注册click事件
+  // 6. 发布新文章
+  // 6.1  给两个按钮同时注册click事件
+  // 注意:不能给表单注册提交事件
   $('.btn').on('click',function (e) {
     e.preventDefault()
     // 准备数据
@@ -70,8 +71,9 @@ $(function () {
           type: 'POST',
           url: '/my/article/add',
           data: fd,
-          contentType: false,
-          processData: false,
+          // 注意: FormData的数据发送给服务器的时候，一定一定一定要添加下面这两行代码
+          contentType: false,// 不要添加那种请求头格式
+          processData: false,// 内部不要转换成查询字符串
           success: function (info) {
             layer.msg(info.message)
             if (info.status === 0) {
